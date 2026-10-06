@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ShopGram Lab</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5;color:#222}
+  nav{background:#ee4d2d;padding:10px 20px;display:flex;gap:16px;align-items:center}
+  nav a,nav button{color:#fff;text-decoration:none;background:none;border:0;cursor:pointer;font-size:15px}
+  nav .spacer{flex:1}
+  main{max-width:900px;margin:20px auto;padding:0 16px}
+  .card{background:#fff;border-radius:8px;padding:14px;margin-bottom:12px;box-shadow:0 1px 3px #0002}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+  .grid img,.post img{width:100%;border-radius:6px}
+  input,select,textarea{padding:8px;margin:4px 0;width:100%;box-sizing:border-box}
+  button.primary{background:#ee4d2d;color:#fff;border:0;padding:8px 14px;border-radius:4px;cursor:pointer}
+  button:disabled{background:#bbb;cursor:not-allowed}
+  .error{color:#c00}.ok{color:#080}.muted{color:#777;font-size:13px}
+  .row{display:flex;gap:8px;align-items:center}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#/feed" data-testid="nav-feed">Feed</a>
+  <a href="#/shop" data-testid="nav-shop">Shop</a>
+  <a href="#/cart" data-testid="nav-cart">Cart (<span data-testid="cart-count">0</span>)</a>
+  <a href="#/orders" data-testid="nav-orders">Orders</a>
+  <span class="spacer"></span>
+  <span id="who" data-testid="nav-user"></span>
+  <button id="logout" data-testid="nav-logout" hidden>Logout</button>
+</nav>
+<main id="view"></main>
+<script src="mock-api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
